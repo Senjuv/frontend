@@ -1,4 +1,4 @@
-const apiBase = 'http://localhost:3000';
+const apiBase = 'https://backend-gomitas.onrender.com';
 
 // Mostrar y ocultar secciones
 const btnTienda = document.getElementById('btn-tienda');
