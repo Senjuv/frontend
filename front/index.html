@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión Tiendas Gomitas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center p-4">
+
+  <div class="max-w-2xl w-full bg-white rounded-lg shadow-md p-6">
+
+    <h1 class="text-3xl font-bold mb-6 text-center">Gestión de Tiendas de Gomitas</h1>
+
+    <!-- Botones para cambiar entre secciones -->
+    <div class="flex justify-center gap-4 mb-6">
+      <button id="btn-tienda" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Agregar Tienda</button>
+      <button id="btn-entrega" class="px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400">Agregar Entrega</button>
+      <button id="btn-cotizacion" class="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">Cotizar Producción</button>
+      <button id="btn-finanzas" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Finanzas</button>
+    </div>
+
+    <!-- Sección Tiendas -->
+    <section id="seccion-tienda" class="">
+      <form id="form-tienda" class="flex flex-col gap-4 mb-6">
+        <input type="text" id="nombre" placeholder="Nombre de la tienda"
+          class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+        <input type="text" id="direccion" placeholder="Dirección"
+          class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Agregar Tienda
+        </button>
+      </form>
+
+      <h2 class="text-xl font-semibold mb-3">Tiendas Registradas:</h2>
+      <ul id="lista-tiendas" class="space-y-2 max-h-72 overflow-y-auto"></ul>
+    </section>
+
+    <!-- Sección Entregas -->
+    <section id="seccion-entrega" class="hidden">
+      <form id="form-entrega" class="flex flex-col gap-4 mb-6">
+        <select id="tienda-id"
+          class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" required>
+          <option value="">Selecciona una tienda</option>
+        </select>
+        <input type="number" id="cantidad" placeholder="Cantidad de bolsas"
+          class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" min="1" required />
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+          Registrar Entrega
+        </button>
+      </form>
+
+      <h2 class="text-xl font-semibold mb-3">Historial de Entregas:</h2>
+      <ul id="lista-entregas" class="space-y-2 max-h-72 overflow-y-auto"></ul>
+    </section>
+
+    <!-- Sección Cotización -->
+    <section id="seccion-cotizacion" class="hidden">
+      <form id="form-cotizacion" class="flex flex-col gap-4 mb-6">
+        <input type="number" id="cantidad-bolsas" placeholder="Cantidad de bolsas" min="1" required
+          class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+        <input type="number" id="dinero-actual-cotizacion" placeholder="Dinero actual disponible" min="0" step="0.01"
+          required class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+        <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+          Calcular y Guardar Cotización
+        </button>
+      </form>
+
+      <div id="resultado-cotizacion" class="bg-purple-50 border border-purple-300 p-4 rounded hidden"></div>
+    </section>
+
+    <!-- Sección Finanzas -->
+    <section id="seccion-finanzas" class="hidden">
+      <form id="form-finanzas" class="flex flex-col gap-4 mb-6 max-w-sm mx-auto">
+        <input type="number" id="dinero-actual-finanzas" placeholder="Dinero actual disponible" min="0" step="0.01"
+          required class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+        <input type="number" id="dinero-esperado-finanzas" placeholder="Dinero esperado después de entregas" min="0"
+          step="0.01" required
+          class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+        <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition">
+          Guardar Finanzas
+        </button>
+      </form>
+
+      <div id="resultado-finanzas" class="bg-yellow-50 border border-yellow-300 p-4 rounded hidden mt-4"></div>
+    </section>
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
