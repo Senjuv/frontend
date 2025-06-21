@@ -8,22 +8,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center px-2 sm:px-4 py-4">
 
-  <div class="max-w-2xl w-full bg-white rounded-lg shadow-md p-6">
+  <div class="w-full max-w-2xl bg-white rounded-lg shadow-md p-4 sm:p-6">
 
-    <h1 class="text-3xl font-bold mb-6 text-center">Gestión de Tiendas de Gomitas</h1>
+    <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-center">Gestión de Tiendas de Gomitas</h1>
 
     <!-- Botones para cambiar entre secciones -->
-    <div class="flex justify-center gap-4 mb-6">
-      <button id="btn-tienda" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Agregar Tienda</button>
-      <button id="btn-entrega" class="px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400">Agregar Entrega</button>
-      <button id="btn-cotizacion" class="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">Cotizar Producción</button>
-      <button id="btn-finanzas" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Finanzas</button>
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6">
+      <button id="btn-tienda" class="flex-1 sm:flex-none px-3 py-2 text-sm sm:text-base bg-blue-500 text-white rounded hover:bg-blue-600">Agregar Tienda</button>
+      <button id="btn-entrega" class="flex-1 sm:flex-none px-3 py-2 text-sm sm:text-base bg-gray-300 text-black rounded hover:bg-gray-400">Agregar Entrega</button>
+      <button id="btn-cotizacion" class="flex-1 sm:flex-none px-3 py-2 text-sm sm:text-base bg-purple-500 text-white rounded hover:bg-purple-600">Cotizar</button>
+      <button id="btn-finanzas" class="flex-1 sm:flex-none px-3 py-2 text-sm sm:text-base bg-yellow-500 text-white rounded hover:bg-yellow-600">Finanzas</button>
     </div>
 
     <!-- Sección Tiendas -->
-    <section id="seccion-tienda" class="">
+    <section id="seccion-tienda">
       <form id="form-tienda" class="flex flex-col gap-4 mb-6">
         <input type="text" id="nombre" placeholder="Nombre de la tienda"
           class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
@@ -34,8 +34,8 @@
         </button>
       </form>
 
-      <h2 class="text-xl font-semibold mb-3">Tiendas Registradas:</h2>
-      <ul id="lista-tiendas" class="space-y-2 max-h-72 overflow-y-auto"></ul>
+      <h2 class="text-lg sm:text-xl font-semibold mb-3">Tiendas Registradas:</h2>
+      <ul id="lista-tiendas" class="space-y-2 max-h-64 sm:max-h-72 overflow-y-auto text-sm sm:text-base"></ul>
     </section>
 
     <!-- Sección Entregas -->
@@ -52,8 +52,8 @@
         </button>
       </form>
 
-      <h2 class="text-xl font-semibold mb-3">Historial de Entregas:</h2>
-      <ul id="lista-entregas" class="space-y-2 max-h-72 overflow-y-auto"></ul>
+      <h2 class="text-lg sm:text-xl font-semibold mb-3">Historial de Entregas:</h2>
+      <ul id="lista-entregas" class="space-y-2 max-h-64 sm:max-h-72 overflow-y-auto text-sm sm:text-base"></ul>
     </section>
 
     <!-- Sección Cotización -->
@@ -68,7 +68,7 @@
         </button>
       </form>
 
-      <div id="resultado-cotizacion" class="bg-purple-50 border border-purple-300 p-4 rounded hidden"></div>
+      <div id="resultado-cotizacion" class="bg-purple-50 border border-purple-300 p-4 rounded hidden text-sm sm:text-base"></div>
     </section>
 
     <!-- Sección Finanzas -->
@@ -84,7 +84,7 @@
         </button>
       </form>
 
-      <div id="resultado-finanzas" class="bg-yellow-50 border border-yellow-300 p-4 rounded hidden mt-4"></div>
+      <div id="resultado-finanzas" class="bg-yellow-50 border border-yellow-300 p-4 rounded hidden mt-4 text-sm sm:text-base"></div>
     </section>
 
   </div>
